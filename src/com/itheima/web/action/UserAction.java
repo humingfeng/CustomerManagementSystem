@@ -77,9 +77,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		User existUser = userService.login(user);
 		// 判断，登录名或者密码错误了
 		if(existUser == null){
-			//return LOGIN;
-			System.out.println("中文");
-			return "loginOK";
+			return LOGIN;
 		}else{
 			ServletActionContext.getRequest().getSession().setAttribute("existUser", existUser);
 			// 登录成功
