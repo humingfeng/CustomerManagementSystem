@@ -13,15 +13,17 @@
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
+	<import resource="config/spring/applicationContext-shiro.xml"/>
+	
 	<!-- 开启注解的扫描 -->
 	<context:component-scan base-package="com.itheima"/>
 	
 	<!-- 先配置C3P0的连接池 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="oracle.jdbc.OracleDriver"/>
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@47.94.221.127:1521:orcl"/>
-		<property name="user" value="scs"/>
-		<property name="password" value="scs"/>
+		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+		<property name="jdbcUrl" value="jdbc:mysql://bdm26222991.my3w.com:3306/bdm26222991_db"/>
+		<property name="user" value="bdm26222991"/>
+		<property name="password" value="humf1123"/>
 	</bean>
 	
 	<!-- LocalSessionFactoryBean加载配置文件 -->
@@ -31,7 +33,7 @@
 		<!-- 加载方言，加载可选 -->
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>

@@ -25,6 +25,15 @@ public class User {
 	// 用户的状态 1正常 0暂停
 	private String user_state;
 	
+	public User(){
+		
+	}
+	public User(String user_name,String user_password){
+		this.user_code=user_code;
+		this.user_password = user_password;
+	}
+	
+	
 	public Long getUser_id() {
 		return user_id;
 	}
